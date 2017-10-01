@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.fh;
+package com.fh.settings.firehound;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -27,7 +27,7 @@ import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
 
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.R;
+import com.fh.settings.R;
 
 import com.android.internal.logging.nano.MetricsProto;
 

@@ -32,7 +32,7 @@ import android.widget.LinearLayout;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.android.settings.R;
+import com.fh.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 /*
@@ -46,9 +46,10 @@ import com.fh.settings.navbar.NavbarSettings;
 import com.fh.settings.ui.DisplaySettings;
 import com.fh.settings.sound.SoundSettings;
 import com.fh.settings.animation.AnimationSettings;
-import com.fh.settings.misc.MiscSettings;
-import com.fh.settings.firehound.FireHound;
-*/
+import com.fh.settings.misc.MiscSettings; */
+
+import com.fh.settings.firehound.Firehound;
+
 
 public class FhSettingsLayout extends SettingsPreferenceFragment {
 
@@ -91,9 +92,9 @@ public class FhSettingsLayout extends SettingsPreferenceFragment {
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
-/*
-            frags[0] = new FireHound();
-            frags[1] = new StatusBarSettings();
+
+            frags[0] = new Firehound();
+/*            frags[1] = new StatusBarSettings();
             frags[2] = new QuickSettings();
             frags[3] = new NotificationSettings();
             frags[4] = new LockScreenSettings();
@@ -126,9 +127,9 @@ public class FhSettingsLayout extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[] {
-/*
+
             getString(R.string.fh_online),
-            getString(R.string.status_bar_title),
+/*            getString(R.string.status_bar_title),
             getString(R.string.qs_title),
             getString(R.string.notification_title),
             getString(R.string.lockscreen_title),
