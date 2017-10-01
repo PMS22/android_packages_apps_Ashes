@@ -23,6 +23,7 @@ import android.support.v7.preference.Preference;
 
 import com.android.internal.logging.nano.MetricsProto;
 
+import android.content.res.Resources;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -32,7 +33,7 @@ public class FhSettings extends SettingsPreferenceFragment {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.FH_SETTING;;
+        return MetricsProto.MetricsEvent.FH_SETTINGS;
     }
 
     @Override

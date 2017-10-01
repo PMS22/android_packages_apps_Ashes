@@ -18,6 +18,7 @@ package com.android.settings.fh;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,7 +29,7 @@ import android.support.v7.preference.PreferenceScreen;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 
 public class Firehound extends SettingsPreferenceFragment {
 
@@ -57,8 +58,8 @@ public class Firehound extends SettingsPreferenceFragment {
     }
 
     @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.APPLICATION;
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.APPLICATION;
     }
 
     @Override

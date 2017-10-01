@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 FireHound ROMs
+     Copyright (C) 2017 FireHound ROM
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -13,11 +13,15 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/fh_settings_title" >
 
-    <!-- Paged Layout -->
-    <color name="config_tab_color">@*android:color/secondary_device_default_settings</color>
-    <color name="config_tab_text_color">@*android:color/secondary_text_default_material_dark</color>
-    <color name="theme_accent">@*android:color/primary_material_dark</color>
+    <!-- About FireHound -->
+        <PreferenceScreen 
+	    android:key="info"
+            android:title="@string/about_fh"
+	    android:fragment="com.android.settings.fh.Firehound" />
 
-</resources>
+</PreferenceScreen>
