@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.fh.settings.fragments.lockscreen.lockscreensettings;
+package com.fh.settings.fragments.lockscreen;
 
 import android.os.Bundle;
 import android.support.v7.preference.ListPreference;

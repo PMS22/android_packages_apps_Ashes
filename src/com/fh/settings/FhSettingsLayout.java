@@ -91,12 +91,12 @@ public class FhSettingsLayout extends SettingsPreferenceFragment {
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
             frags[0] = new Firehound();
-            frags[1] = new StatusSarSettings();
+            frags[1] = new StatusBarSettings();
             frags[2] = new QuickSettings();
             frags[3] = new NotificationsSettings();
             frags[4] = new LockScreenSettings();
             frags[5] = new RecentsSettings();
-            frags[6] = new Buttonsettings();
+            frags[6] = new ButtonSettings();
             frags[7] = new NavbarSettings();
             frags[8] = new DisplaySettings();
             frags[9] = new SoundSettings();

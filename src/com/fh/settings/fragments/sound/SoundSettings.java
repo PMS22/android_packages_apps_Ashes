@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.fh.settings.fragments.sound.soundsettings;
+package com.fh.settings.fragments.sound;
 
 import android.os.Bundle;
 import android.support.v7.preference.ListPreference;

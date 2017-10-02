@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.fh.settings.fragments.notifications.notificationssettings;
+package com.fh.settings.fragments.notifications;
 
 import android.os.Bundle;
 import android.support.v7.preference.ListPreference;

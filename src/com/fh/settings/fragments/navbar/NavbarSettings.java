@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.fh.settings.fragments.navbar.navbarsettings;
+package com.fh.settings.fragments.navbar;
 
 import android.os.Bundle;
 import android.support.v7.preference.ListPreference;

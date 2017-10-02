@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.fh.settings.fragments.recents.recentssettings;
+package com.fh.settings.fragments.recents;
 
 import android.os.Bundle;
 import android.support.v7.preference.ListPreference;
