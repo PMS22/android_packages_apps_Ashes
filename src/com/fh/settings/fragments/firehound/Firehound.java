@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.fh.settings.firehound;
+package com.fh.settings.fragments.firehound;
 
 import android.app.Activity;
 import android.content.Intent;

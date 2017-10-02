@@ -35,20 +35,18 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.fh.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-/*
-import com.fh.settings.statusbar.StatusBarSettings;
-import com.fh.settings.qs.QuickSettings;
-import com.fh.settings.notifications.NotificationsSettings;
-import com.fh.settings.lockscreen.LockScreenSettings;
-import com.fh.settings.recents.RecentsSettings;
-import com.fh.settings.hwbutton.ButtonSettings;
-import com.fh.settings.navbar.NavbarSettings;
-import com.fh.settings.ui.DisplaySettings;
-import com.fh.settings.sound.SoundSettings;
-import com.fh.settings.animation.AnimationSettings;
-import com.fh.settings.misc.MiscSettings; */
-
-import com.fh.settings.firehound.Firehound;
+import com.fh.settings.fragments.statusbar.StatusBarSettings;
+import com.fh.settings.fragments.qs.QuickSettings;
+import com.fh.settings.fragments.notifications.NotificationsSettings;
+import com.fh.settings.fragments.lockscreen.LockScreenSettings;
+import com.fh.settings.fragments.recents.RecentsSettings;
+import com.fh.settings.fragments.hwbutton.ButtonSettings;
+import com.fh.settings.fragments.navbar.NavbarSettings;
+import com.fh.settings.fragments.ui.DisplaySettings;
+import com.fh.settings.fragments.sound.SoundSettings;
+import com.fh.settings.fragments.animation.AnimationSettings;
+import com.fh.settings.fragments.misc.MiscSettings;
+import com.fh.settings.fragments.firehound.Firehound;
 
 
 public class FhSettingsLayout extends SettingsPreferenceFragment {
@@ -92,20 +90,19 @@ public class FhSettingsLayout extends SettingsPreferenceFragment {
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
-
             frags[0] = new Firehound();
-/*            frags[1] = new StatusBarSettings();
+            frags[1] = new StatusSarSettings();
             frags[2] = new QuickSettings();
-            frags[3] = new NotificationSettings();
+            frags[3] = new NotificationsSettings();
             frags[4] = new LockScreenSettings();
             frags[5] = new RecentsSettings();
-            frags[6] = new ButtonSettings();
+            frags[6] = new Buttonsettings();
             frags[7] = new NavbarSettings();
             frags[8] = new DisplaySettings();
             frags[9] = new SoundSettings();
             frags[10] = new AnimationSettings();
             frags[11] = new MiscSettings();
-*/
+
         }
 
         @Override
@@ -127,9 +124,8 @@ public class FhSettingsLayout extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[] {
-
             getString(R.string.fh_online),
-/*            getString(R.string.status_bar_title),
+            getString(R.string.status_bar_title),
             getString(R.string.qs_title),
             getString(R.string.notification_title),
             getString(R.string.lockscreen_title),
@@ -140,7 +136,6 @@ public class FhSettingsLayout extends SettingsPreferenceFragment {
             getString(R.string.sound_title),
             getString(R.string.animation_settings),
             getString(R.string.misc_title)
-*/
         };
         return titleString;
     }
