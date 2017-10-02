@@ -15,7 +15,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-<!-- About phone screen, FH version -->
+    <!-- About phone screen, FH version -->
     <string name="fh_mod_version">FireHound Version</string>
 
     <!-- FHSettings -->
@@ -47,20 +47,6 @@
     <string name="share_fh_summary">Pour some fuel and spread Fire</string>
     <string name="share_message">FireHound is Custom ROM developed focusing on stability and features! Go go go, flash FireHound and change the way you use your smartphone! For more information, join our community: @ https://plus.google.com/communities/114615598909452601377</string>
     <string name="share_chooser_title">Share FireHound</string>
-
-    <!-- Burnt ashes summary -->
-    <string name="fh_settings_summary">Burn it here!!</string>
-
-    <!-- FH Settings -->
-    <string name="status_bar_title">Status Bar</string>
-    <string name="notification_settings">Quick Settings</string>
-    <string name="animation_settings_title">Animations</string>
-    <string name="recents_settings">Recents</string>
-    <string name="gestures_settings">Gestures</string>
-    <string name="advanced_gestures">Advanced Gestures</string>
-    <string name="fh_online">About FireHound</string>
-    <string name="category_interface">Interface</string>
-    <string name="qs_animations">Animations</string>
 
     <!-- Maintainers -->
     <string name="maintainers">Official FireHound Maintainers</string>
@@ -126,5 +112,21 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
+
+    <!-- FireHound Main Settings -->
+    <string name="fh_online">About Us</string>
+    <string name="status_bar_title">Status Bar</string>
+    <string name="qs_title">Quick Settings</string>
+    <string name="notification_title">Notifications</string>
+    <string name="lockscreen_title">Lock Screen</string>
+    <string name="recents_settings">Recents</string>
+    <string name="button_title">Hardware Buttons</string>
+    <string name="navbar_title">Navigation Bar</string>
+    <string name="display_title">Display / UI</string>
+    <string name="sound_title">Sounds</string>
+    <string name="animation_settings">Animations</string>
+    <string name="misc_title">Miscellaneous</string>
+    <string name="back_soon_title">Hey there</string>
+    <string name="back_soon_summary">We will be back soon with all the features! Till then chill ya!!!</string>
 
 </resources>

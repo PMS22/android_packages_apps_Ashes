@@ -42,13 +42,6 @@
             android:title="@string/fh_website_title"
             android:summary="@string/fh_website_summary" />
 
-	<!-- FireHound Maintainers 
-	<PreferenceScreen
-	    android:key="fh_maintainers"
-	    android:fragment="com.android.settings.fh.Maintainers"
-	    android:title="@string/fh_maintainers_title"
-	    android:summary="@string/fh_maintainers_summary" -->
-
         <!-- FireHound Github -->
         <Preference
             android:key="fh_source"
