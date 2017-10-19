@@ -21,6 +21,23 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
+import android.text.Html;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.provider.Settings;
+import android.preference.CheckBoxPreference;
+import android.preference.Preference;
+import android.preference.PreferenceCategory;
+import android.preference.PreferenceManager;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceScreen;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 
@@ -37,13 +54,13 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.fh.settings.fragments.statusbar.StatusBarSettings;
 import com.fh.settings.fragments.qs.QuickSettings;
-import com.fh.settings.fragments.notifications.NotificationsSettings;
+import com.fh.settings.fragments.notifications.FhNotificationsSettings;
 import com.fh.settings.fragments.lockscreen.LockScreenSettings;
 import com.fh.settings.fragments.recents.RecentsSettings;
 import com.fh.settings.fragments.hwbutton.ButtonSettings;
 import com.fh.settings.fragments.navbar.NavbarSettings;
 import com.fh.settings.fragments.ui.DisplaySettings;
-import com.fh.settings.fragments.sound.SoundSettings;
+import com.fh.settings.fragments.sound.FhSoundSettings;
 import com.fh.settings.fragments.animation.AnimationSettings;
 import com.fh.settings.fragments.misc.MiscSettings;
 import com.fh.settings.fragments.firehound.Firehound;
@@ -54,22 +71,21 @@ public class FhSettingsLayout extends SettingsPreferenceFragment {
     private static final String TAG = "FhSettingsLayout";
     ViewPager mViewPager;
     ViewGroup mContainer;
+    String titleString[];
     PagerSlidingTabStrip mTabs;
     SectionsPagerAdapter mSectionsPagerAdapter;
-    protected Context mContext;
-    private LinearLayout mLayout;
+
+    static Bundle mSavedState;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContainer = container;
         View view = inflater.inflate(R.layout.fh_settings, container, false);
-        mLayout = (LinearLayout) view.findViewById(R.id.fh_content);
-        mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
+        mViewPager = (ViewPager) view.findViewById(R.id.pager);
         mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mTabs.setViewPager(mViewPager);
-        mContext = getActivity().getApplicationContext();
-        ContentResolver resolver = getActivity().getContentResolver();
+        setHasOptionsMenu(true);
         return view;
     }
 
@@ -93,13 +109,13 @@ public class FhSettingsLayout extends SettingsPreferenceFragment {
             frags[0] = new Firehound();
             frags[1] = new StatusBarSettings();
             frags[2] = new QuickSettings();
-            frags[3] = new NotificationsSettings();
+            frags[3] = new FhNotificationsSettings();
             frags[4] = new LockScreenSettings();
             frags[5] = new RecentsSettings();
             frags[6] = new ButtonSettings();
             frags[7] = new NavbarSettings();
             frags[8] = new DisplaySettings();
-            frags[9] = new SoundSettings();
+            frags[9] = new FhSoundSettings();
             frags[10] = new AnimationSettings();
             frags[11] = new MiscSettings();
 

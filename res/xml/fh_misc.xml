@@ -21,18 +21,6 @@
 <PreferenceScreen android:layout="@layout/logo" android:key="fh_about_logo" />
 
     <PreferenceCategory
-        android:key="Firehound"
-        android:title="@string/about_developer">
-
-        <!-- Developer -->
-        <Preference
-            android:key="fh_developer"
-            android:title="@string/fh_developer_title"
-            android:summary="@string/fh_developer_summary" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="online"
         android:title="@string/fh_online">
 
@@ -40,37 +28,42 @@
         <Preference
             android:key="fh_website"
             android:title="@string/fh_website_title"
-            android:summary="@string/fh_website_summary" />
+            android:summary="@string/fh_website_summary"
+            android:icon="@drawable/ic_website" />
 
         <!-- FireHound Github -->
         <Preference
             android:key="fh_source"
             android:title="@string/fh_git_title"
-            android:summary="@string/fh_git_summary" />
+            android:summary="@string/fh_git_summary"
+            android:icon="@drawable/ic_source" />
 
         <!-- FireHound GooglePlus -->
         <Preference
             android:key="fh_google_plus"
             android:title="@string/fh_google_plus_title"
-            android:summary="@string/fh_google_plus_summary" />
+            android:summary="@string/fh_google_plus_summary"
+            android:icon="@drawable/ic_google" />
 
 	<!-- FireHound Donation -->
 	<Preference
 	   android:key="fh_donation"
 	   android:title="@string/fh_donation_title"
-	   android:summary="@string/fh_donation_summary" />
+	   android:summary="@string/fh_donation_summary"
+           android:icon="@drawable/ic_donate" />
 
-        <!-- FH Gerrit -->
+        <!-- FH Gerrit
         <Preference
             android:key="fh_gerrit"
             android:title="@string/fh_gerrit_title"
-            android:summary="@string/fh_gerrit_summary" />
+            android:summary="@string/fh_gerrit_summary" -->
 
 	<!-- FH Share -->
         <Preference
             android:key="share"
             android:title="@string/share_fh_title"
-            android:summary="@string/share_fh_summary" />
+            android:summary="@string/share_fh_summary"
+            android:icon="@drawable/ic_share" />
 
     </PreferenceCategory>
 

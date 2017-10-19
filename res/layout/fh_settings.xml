@@ -13,35 +13,25 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<RelativeLayout
-     xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-     xmlns:fab="http://schemas.android.com/apk/res-auto"
-     xmlns:tools="http://schemas.android.com/tools"
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     tools:context="in.city.bytes.view.MainActivity">
-
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fh_content"
-        android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
 
         <com.fh.settings.PagerSlidingTabStrip
             android:id="@+id/tabs"
-            app:pstsShouldExpand="false"
             android:layout_width="match_parent"
-            android:background="@color/config_tab_color"
+            android:background="@color/dt_tab_color"
             android:layout_height="48dp" />
 
         <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager"
+            android:id="@+id/pager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="0dp"
             tools:context=".FhSettings"/>
-    </LinearLayout>
-</RelativeLayout>
+ 
+</LinearLayout>

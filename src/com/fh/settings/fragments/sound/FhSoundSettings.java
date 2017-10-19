@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.fh.settings.fragments.notifications;
+package com.fh.settings.fragments.sound;
 
 import android.os.Bundle;
 import android.support.v7.preference.ListPreference;
@@ -28,8 +28,8 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-public class NotificationsSettings extends SettingsPreferenceFragment {
-    private static final String TAG = "NotificationsSettings";
+public class FhSoundSettings extends SettingsPreferenceFragment {
+    private static final String TAG = "FhSoundSettings";
 
     @Override
     public int getMetricsCategory() {
@@ -39,6 +39,6 @@ public class NotificationsSettings extends SettingsPreferenceFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.notification_settings);
+        addPreferencesFromResource(R.xml.fh_sound_settings);
     }
 }
