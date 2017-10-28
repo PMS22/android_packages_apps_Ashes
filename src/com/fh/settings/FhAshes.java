@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Firehound ROMs
+ * Copyright (C) 2017 FireHound ROMs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,10 @@
 package com.fh.settings;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.ContentResolver;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -31,6 +28,7 @@ import android.text.Html;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.os.Bundle;
 import android.provider.Settings;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
@@ -38,20 +36,21 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
-import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
-
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.fh.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.fh.settings.PagerSlidingTabStrip;
 import com.fh.settings.fragments.statusbar.StatusBarSettings;
 import com.fh.settings.fragments.qs.QuickSettings;
 import com.fh.settings.fragments.notifications.FhNotificationsSettings;
@@ -65,26 +64,27 @@ import com.fh.settings.fragments.animation.AnimationSettings;
 import com.fh.settings.fragments.misc.MiscSettings;
 import com.fh.settings.fragments.firehound.Firehound;
 
+public class FhAshes extends SettingsPreferenceFragment {
 
-public class FhSettingsLayout extends SettingsPreferenceFragment {
+    private static final int MENU_HELP  = 0;
 
-    private static final String TAG = "FhSettingsLayout";
     ViewPager mViewPager;
-    ViewGroup mContainer;
     String titleString[];
+    ViewGroup mContainer;
     PagerSlidingTabStrip mTabs;
-    SectionsPagerAdapter mSectionsPagerAdapter;
 
     static Bundle mSavedState;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContainer = container;
-        View view = inflater.inflate(R.layout.fh_settings, container, false);
+
+        View view = inflater.inflate(R.layout.extensions, container, false);
         mViewPager = (ViewPager) view.findViewById(R.id.pager);
         mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        StatusBarAdapter StatusBarAdapter = new StatusBarAdapter(getFragmentManager());
+        mViewPager.setAdapter(StatusBarAdapter);
         mTabs.setViewPager(mViewPager);
+
         setHasOptionsMenu(true);
         return view;
     }
@@ -99,12 +99,22 @@ public class FhSettingsLayout extends SettingsPreferenceFragment {
         super.onSaveInstanceState(saveState);
     }
 
-    class SectionsPagerAdapter extends FragmentPagerAdapter {
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.EXTENSIONS;
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mContainer.setPadding(30, 30, 30, 30);
+    }
+
+    class StatusBarAdapter extends FragmentPagerAdapter {
         String titles[] = getTitles();
         private Fragment frags[] = new Fragment[titles.length];
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        public StatusBarAdapter(FragmentManager fm) {
             super(fm);
             frags[0] = new Firehound();
             frags[1] = new StatusBarSettings();
@@ -118,7 +128,11 @@ public class FhSettingsLayout extends SettingsPreferenceFragment {
             frags[9] = new FhSoundSettings();
             frags[10] = new AnimationSettings();
             frags[11] = new MiscSettings();
+        }
 
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return titles[position];
         }
 
         @Override
@@ -130,16 +144,11 @@ public class FhSettingsLayout extends SettingsPreferenceFragment {
         public int getCount() {
             return frags.length;
         }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return titles[position];
-        }
     }
 
     private String[] getTitles() {
         String titleString[];
-        titleString = new String[] {
+        titleString = new String[]{
             getString(R.string.fh_online),
             getString(R.string.status_bar_title),
             getString(R.string.qs_title),
@@ -155,9 +164,4 @@ public class FhSettingsLayout extends SettingsPreferenceFragment {
         };
         return titleString;
     }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.FH_SETTINGS;
-     }
 }

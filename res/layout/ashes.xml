@@ -21,17 +21,17 @@
     android:orientation="vertical"
     android:fitsSystemWindows="true">
 
-        <com.fh.settings.PagerSlidingTabStrip
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:background="@color/dt_tab_color"
-            android:layout_height="48dp" />
+    <com.fh.settings.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:background="@color/dt_tab_background_color"
+        android:layout_height="48dp" />
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pager"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="0dp"
-            tools:context=".FhSettings"/>
- 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:context=".FhAshes"/>
+
 </LinearLayout>

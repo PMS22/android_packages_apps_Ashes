@@ -60,7 +60,6 @@
     
     <attr name="preferenceBackgroundColor" format="color" />
 
-
     <!-- ColorPicker -->
     <declare-styleable name="ColorPickPref">
         <attr name="alphaSlider" format="boolean" />
